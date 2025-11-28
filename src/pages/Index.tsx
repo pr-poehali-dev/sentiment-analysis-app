@@ -103,7 +103,7 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Icon name="BarChart3" size={28} />
-              <span className="text-xl font-bold">SentimentAI</span>
+              <span className="text-xl font-bold">SentAI</span>
             </div>
             <div className="hidden md:flex space-x-1">
               <Button
@@ -401,7 +401,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <div className="text-center space-y-2">
               <h2 className="text-4xl font-bold">О проекте</h2>
-              <p className="text-gray-600">SentimentAI - платформа анализа тональности</p>
+              <p className="text-gray-600">SentAI - платформа анализа тональности</p>
             </div>
 
             <Card className="border-2">
@@ -410,7 +410,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4 text-base leading-relaxed">
                 <p>
-                  Проект SentimentAI создан для автоматической классификации тональности русскоязычных текстов 
+                  Проект SentAI создан для автоматической классификации тональности русскоязычных текстов 
                   с использованием современных технологий машинного обучения.
                 </p>
                 <p>
@@ -497,7 +497,7 @@ const Index = () => {
       <footer className="border-t border-gray-200 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600">
-            <p>© 2024 SentimentAI. Анализ тональности текстов для города Москвы</p>
+            <p>© 2024 SentAI. Анализ тональности текстов для города Москвы</p>
           </div>
         </div>
       </footer>
