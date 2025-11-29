@@ -152,9 +152,11 @@ const Index = () => {
             <div className="text-center space-y-6 pt-12">
               <h1 className="text-6xl font-bold tracking-tight">
                 Анализ тональности текстов
+                <span className="block text-sm font-normal text-gray-400 mt-2">Заголовок: 60px, жирный</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Современная платформа для классификации обращений горожан с помощью машинного обучения
+                <span className="block text-xs text-gray-400 mt-1">Подзаголовок: 20px, обычный</span>
               </p>
               <div className="pt-4">
                 <Button size="lg" onClick={() => setActiveTab('analyze')} className="text-lg px-8">
@@ -171,6 +173,7 @@ const Index = () => {
                   <CardTitle>Быстрый анализ</CardTitle>
                   <CardDescription>
                     Мгновенная классификация тональности текста с высокой точностью
+                    <span className="block text-xs text-gray-400 mt-2">Иконка: 40px | Заголовок карточки: 24px | Описание: 14px</span>
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -181,6 +184,7 @@ const Index = () => {
                   <CardTitle>Машинное обучение</CardTitle>
                   <CardDescription>
                     Продвинутые алгоритмы для точного определения эмоциональной окраски
+                    <span className="block text-xs text-gray-400 mt-2">Иконка: 40px | Заголовок карточки: 24px | Описание: 14px</span>
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -191,6 +195,7 @@ const Index = () => {
                   <CardTitle>Детальная статистика</CardTitle>
                   <CardDescription>
                     Визуализация результатов и отслеживание динамики обращений
+                    <span className="block text-xs text-gray-400 mt-2">Иконка: 40px | Заголовок карточки: 24px | Описание: 14px</span>
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -201,13 +206,19 @@ const Index = () => {
         {activeTab === 'analyze' && (
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <div className="text-center space-y-2">
-              <h2 className="text-4xl font-bold">Анализ текста</h2>
-              <p className="text-gray-600">Введите текст для определения его тональности</p>
+              <h2 className="text-4xl font-bold">Анализ текста
+                <span className="block text-sm font-normal text-gray-400 mt-2">Заголовок раздела: 36px, жирный</span>
+              </h2>
+              <p className="text-gray-600">Введите текст для определения его тональности
+                <span className="block text-xs text-gray-400 mt-1">Подзаголовок: 16px, обычный</span>
+              </p>
             </div>
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle>Введите текст</CardTitle>
+                <CardTitle>Введите текст
+                  <span className="block text-xs font-normal text-gray-400 mt-1">Заголовок карточки: 24px, жирный</span>
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Textarea
@@ -216,10 +227,14 @@ const Index = () => {
                   onChange={(e) => setInputText(e.target.value)}
                   className="min-h-[150px] text-base"
                 />
-                <Button onClick={analyzeText} className="w-full" size="lg" disabled={!inputText.trim()}>
-                  <Icon name="Search" size={20} className="mr-2" />
-                  Анализировать
-                </Button>
+                <p className="text-xs text-gray-400">Поле ввода: минимум 150px высота | Текст: 16px</p>
+                <div className="space-y-2">
+                  <Button onClick={analyzeText} className="w-full" size="lg" disabled={!inputText.trim()}>
+                    <Icon name="Search" size={20} className="mr-2" />
+                    Анализировать
+                  </Button>
+                  <p className="text-xs text-gray-400 text-center">Кнопка: размер lg (большая) | Иконка: 20px | Текст: 18px</p>
+                </div>
               </CardContent>
             </Card>
 
