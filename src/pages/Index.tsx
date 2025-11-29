@@ -273,20 +273,30 @@ const Index = () => {
         {activeTab === 'history' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-2">
-              <h2 className="text-4xl font-bold">История анализов</h2>
-              <p className="text-gray-600">Все предыдущие результаты анализа</p>
+              <h2 className="text-4xl font-bold">История анализов
+                <span className="block text-sm font-normal text-gray-400 mt-2">Заголовок раздела: 36px, жирный</span>
+              </h2>
+              <p className="text-gray-600">Все предыдущие результаты анализа
+                <span className="block text-xs text-gray-400 mt-1">Подзаголовок: 16px, обычный</span>
+              </p>
             </div>
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle>Последние анализы</CardTitle>
-                <CardDescription>Всего проанализировано: {history.length} текстов</CardDescription>
+                <CardTitle>Последние анализы
+                  <span className="block text-xs font-normal text-gray-400 mt-1">Заголовок карточки: 24px, жирный</span>
+                </CardTitle>
+                <CardDescription>Всего проанализировано: {history.length} текстов
+                  <span className="block text-xs text-gray-400 mt-1">Описание: 14px, обычный</span>
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Время</TableHead>
+                      <TableHead>Время
+                        <span className="block text-xs font-normal text-gray-400 mt-1">Заголовки таблицы: 14px, жирный</span>
+                      </TableHead>
                       <TableHead>Текст</TableHead>
                       <TableHead>Тональность</TableHead>
                       <TableHead className="text-right">Уверенность</TableHead>
@@ -297,6 +307,7 @@ const Index = () => {
                       <TableRow key={item.id}>
                         <TableCell className="font-medium">
                           {item.timestamp.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })}
+                          {item.id === '1' && <span className="block text-xs text-gray-400">Ячейки: 14px</span>}
                         </TableCell>
                         <TableCell className="max-w-md truncate">{item.text}</TableCell>
                         <TableCell>
@@ -319,28 +330,41 @@ const Index = () => {
         {activeTab === 'stats' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-2">
-              <h2 className="text-4xl font-bold">Статистика</h2>
-              <p className="text-gray-600">Общая аналитика обработанных обращений</p>
+              <h2 className="text-4xl font-bold">Статистика
+                <span className="block text-sm font-normal text-gray-400 mt-2">Заголовок раздела: 36px, жирный</span>
+              </h2>
+              <p className="text-gray-600">Общая аналитика обработанных обращений
+                <span className="block text-xs text-gray-400 mt-1">Подзаголовок: 16px, обычный</span>
+              </p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-6">
               <Card className="border-2">
                 <CardHeader>
-                  <CardTitle className="text-sm font-medium text-gray-600">Всего обращений</CardTitle>
+                  <CardTitle className="text-sm font-medium text-gray-600">Всего обращений
+                    <span className="block text-xs font-normal text-gray-400 mt-1">Метка: 14px жирный</span>
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold">{stats.total}</div>
+                  <div className="text-3xl font-bold">{stats.total}
+                    <span className="block text-xs font-normal text-gray-400 mt-1">Число: 30px, жирное</span>
+                  </div>
                 </CardContent>
               </Card>
 
               <Card className="border-2 border-green-600">
                 <CardHeader>
-                  <CardTitle className="text-sm font-medium text-gray-600">Позитивные</CardTitle>
+                  <CardTitle className="text-sm font-medium text-gray-600">Позитивные
+                    <span className="block text-xs font-normal text-gray-400 mt-1">Метка: 14px жирный</span>
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-green-600">{stats.positive}</div>
+                  <div className="text-3xl font-bold text-green-600">{stats.positive}
+                    <span className="block text-xs font-normal text-gray-400 mt-1">Число: 30px, жирное</span>
+                  </div>
                   <p className="text-sm text-gray-600 mt-1">
                     {((stats.positive / stats.total) * 100).toFixed(1)}%
+                    <span className="block text-xs text-gray-400">Процент: 14px</span>
                   </p>
                 </CardContent>
               </Card>
@@ -372,14 +396,20 @@ const Index = () => {
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle>Распределение тональности</CardTitle>
-                <CardDescription>Визуализация соотношения категорий</CardDescription>
+                <CardTitle>Распределение тональности
+                  <span className="block text-xs font-normal text-gray-400 mt-1">Заголовок: 24px, жирный</span>
+                </CardTitle>
+                <CardDescription>Визуализация соотношения категорий
+                  <span className="block text-xs text-gray-400 mt-1">Описание: 14px</span>
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="font-medium">Позитивные</span>
+                      <span className="font-medium">Позитивные
+                        <span className="block text-xs font-normal text-gray-400 mt-1">Метки: 14px жирный | Прогресс-бар: высота 12px</span>
+                      </span>
                       <span className="text-gray-600">{stats.positive} обращений</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
@@ -415,18 +445,25 @@ const Index = () => {
         {activeTab === 'about' && (
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <div className="text-center space-y-2">
-              <h2 className="text-4xl font-bold">О проекте</h2>
-              <p className="text-gray-600">SentAI - платформа анализа тональности</p>
+              <h2 className="text-4xl font-bold">О проекте
+                <span className="block text-sm font-normal text-gray-400 mt-2">Заголовок раздела: 36px, жирный</span>
+              </h2>
+              <p className="text-gray-600">SentAI - платформа анализа тональности
+                <span className="block text-xs text-gray-400 mt-1">Подзаголовок: 16px, обычный</span>
+              </p>
             </div>
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle>Цели проекта</CardTitle>
+                <CardTitle>Цели проекта
+                  <span className="block text-xs font-normal text-gray-400 mt-1">Заголовок карточки: 24px, жирный</span>
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-base leading-relaxed">
                 <p>
                   Проект SentAI создан для автоматической классификации тональности русскоязычных текстов 
                   с использованием современных технологий машинного обучения.
+                  <span className="block text-xs text-gray-400 mt-2">Основной текст: 16px, межстрочный интервал увеличен</span>
                 </p>
                 <p>
                   Основная задача - помочь городским службам быстрее обрабатывать обращения горожан, 
@@ -438,14 +475,18 @@ const Index = () => {
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle>Технологии</CardTitle>
+                <CardTitle>Технологии
+                  <span className="block text-xs font-normal text-gray-400 mt-1">Заголовок карточки: 24px, жирный</span>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-start space-x-3">
                     <Icon name="Code" size={24} className="mt-1" />
                     <div>
-                      <h4 className="font-semibold mb-1">Машинное обучение</h4>
+                      <h4 className="font-semibold mb-1">Машинное обучение
+                        <span className="block text-xs font-normal text-gray-400 mt-1">Иконка: 24px | Подзаголовок: 16px жирный | Текст: 14px</span>
+                      </h4>
                       <p className="text-sm text-gray-600">
                         Нейронные сети для обработки естественного языка
                       </p>
@@ -484,12 +525,16 @@ const Index = () => {
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle>Применение</CardTitle>
+                <CardTitle>Применение
+                  <span className="block text-xs font-normal text-gray-400 mt-1">Заголовок карточки: 24px, жирный</span>
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Icon name="CheckCircle2" size={20} />
-                  <span>Анализ обращений в городские службы</span>
+                  <span>Анализ обращений в городские службы
+                    <span className="block text-xs text-gray-400 mt-1">Иконка чекбокса: 20px | Текст списка: 16px</span>
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Icon name="CheckCircle2" size={20} />
